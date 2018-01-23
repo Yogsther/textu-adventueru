@@ -16,7 +16,12 @@ var questReadingSpeed = 30;
 
 function choose(id) {
   var lastQuest = questIndex;
+  try{
+    quests[questIndex].special[questIndex]();
+  } catch(e){
+  }
   questIndex = quests[questIndex].jumpto[id];
+
   displayMessage(questIndex);
   document.getElementById("choices_insert").innerHTML = "Choices: ";
   var displayElements = document.getElementsByClassName("display-message");

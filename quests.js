@@ -23,50 +23,18 @@ Template:
 */
 
 var quests = [{
-    index: 0,
-    display: "Welcome to the Game, let's a go!",
-    options: ["Start the game!"],
-    jumpto: [1]
-  }, {
-    index: 1,
-    display: "*You woke up*",
-    options: ["Stand up", "Go back to sleep"],
-    jumpto: [2, 1]
-  }, {
-    index: 2,
-    display: "*You stood up*",
-    options: ["Look around", "Go back to sleep", "Masturbate"],
-    jumpto: [6, 1, 3]
-  }, {
-    index: 3,
-    display: "It feels good",
-    options: ["Stop it", "Get some help"],
-    jumpto: [4, 5]
-  }, {
-    index: 6,
-    display: "You see a knife",
-    options: ["Grab the knife", "Keep looking"],
-    jumpto: [7, 8]
-  }, {
-    index: 7,
-    display: "What do you want to do with the knife?",
-    options: ["Put it in your pocket", "Circumsize", "Kill yourself"],
-    jumpto: [9, 10, 11]
-  }, {
-    index: 10,
-    diszplay: "oof",
-    options: ["..."],
-    jumpto: [13]
-  }, {
-    index: 13,
-    display: "...",
-    options: ["..."],
-    jumpto: [13]
-  }, {
-    index: 11,
-    display: "You are dead, not big surprise",
-    options: ["Try again"],
-    jumpto: [0]
-  }
+  index: 0,
+  display: "Welcome to Textu Adventuru (Working Title) v.0.2! Hit the \"Start Game\" choice to.. start the game!",
+  options: ["Start Game", "... ?"],
+  jumpto: [2, 1]
+},{
+  index: 1,
+  display: "Why wont you start the game?? It's a lot of fun!",
+  options: ["Back to Main Menu", "Exit the website"],
+  jumpto: [2, 0],
+  special: [null, function(){
+    console.log("Closing website");
+  }]
+}
 
 ]
