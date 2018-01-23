@@ -1,58 +1,50 @@
-*{
+* {
   /* Default styles */
   font-family: 'Roboto', sans-serif;
-  }
+}
 
-
-
-
-#wrap{
+#wrap {
   width: 400px;
   padding: 5px;
   margin: 0 auto;
   display: block;
   position: relative;
 }
-.main-window{
+
+.main-window {
   height: 300px;
   width: 400px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   padding: 5px;
   overflow-x: hidden;
   overflow-y: auto;
-
 }
 
-.display-message{
+.display-message {
   display: block;
   position: relative;
   padding: 5px;
-
 }
 
-.choices{
+.choices {
   position: relative;
   display: block;
   margin-top: 10px;
-
 }
 
-
-input{
+input {
   padding: 5px;
   height: 30px;
   margin-top: 15px;
   border: none;
   width: 400px;
-  box-shadow: 0px 0px 2px rgba(0,0,0,0.2)
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2)
 }
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-outline: none;
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: none;
 }
+
 .title {
   font-size: 20px;
   padding: 10px;
@@ -61,26 +53,25 @@ outline: none;
   display: block;
 }
 
-::-webkit-scrollbar{
-background-color: #d3d3d3;
-width: 8px;
-border-radius: 1px;
+::-webkit-scrollbar {
+  background-color: #d3d3d3;
+  width: 8px;
+  border-radius: 1px;
 }
 
-::-webkit-scrollbar-thumb{
-background-color: #a3a3a3;
-border-radius: 3px;
-
+::-webkit-scrollbar-thumb {
+  background-color: #a3a3a3;
+  border-radius: 3px;
 }
 
-a:link{
-color: #4f4f4f;
+a:link {
+  color: #4f4f4f;
 }
 
-a:visited{
-color: #4f4f4f;
+a:visited {
+  color: #4f4f4f;
 }
 
-a:hover{
-color: #383838;
+a:hover {
+  color: #383838;
 }
