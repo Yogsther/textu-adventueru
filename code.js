@@ -6,6 +6,12 @@ var area = document.getElementById("area"); /* Text area */
 var save = 0;
 var questsDisplayed = 0;
 var questIndex = save;
+var inventory = new Array(); // Start Empty
+
+function save() {
+  // Save progress
+  // TODO: Save quest and Inventory
+}
 
 function run() {
   /* Start the game. */
@@ -15,11 +21,11 @@ function run() {
 var questReadingSpeed = 30;
 
 function choose(id) {
+  /* This function called when the player chooses one of the options. */
   var lastQuest = questIndex;
-  try{
+  try {
     quests[questIndex].special[questIndex]();
-  } catch(e){
-  }
+  } catch (e) {}
   questIndex = quests[questIndex].jumpto[id];
 
   displayMessage(questIndex);
@@ -30,6 +36,7 @@ function choose(id) {
 
 
 function displayMessage(questID) {
+  /* Display a new message on the screen */
   clearInterval(newInterval) // To be sure
   /* Quest ID is the index of the question displayed */
   for (var i = 0; i < quests.length; i++) {
@@ -60,7 +67,13 @@ function displayMessage(questID) {
   console.warn("Quest ID: " + questID + " was not found!");
 }
 
+function giveItem(id){
+
+}
+
+
 function convert() {
+  /* For devtools */
   var input = document.getElementById("input");
   document.getElementById("output").value = JSON.stringify(input.value);
 }
