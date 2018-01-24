@@ -10,7 +10,7 @@
 
 <body>
   <!--
-      Local Website:  http://172.20.0.171
+      Local Website:  http://172.20.0.229
       Github Repo:    https://github.com/Yogsther/textu-adventueru
       Github Website: https://yogsther.github.io/textu-adventueru/
     -->
@@ -25,9 +25,14 @@
     </div>
 
     <div class="devtools">
-      <br><br><br>-> Devtools: <a href="javascript:displayMessage(0)">[RESET]
+
+      <br><br><br>-> Devtools: <a href="javascript:displayMessage(0)">[RESET]</a>
       <input type="text" name="" oninput="convert()" value="" id="input" placeholder="Display text">
-      <input type="text" name="" id="output" value="" placeholder="Output string">
+      <input type="text" name="" id="output" value="" placeholder="Output string"><br><br>
+      <button type="button" name="button" onclick="checkQuests()">Check for missing quests</button><br>
+      <button type="button" name="button" onclick="checkAvalibleIndex()">Check for avalible index</button>
+      <br><span id="insert-missing-quests">
+      </span>
 
     </div>
 

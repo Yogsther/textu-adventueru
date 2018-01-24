@@ -1,8 +1,8 @@
 * {
   /* Default styles */
   font-family: 'Roboto', sans-serif;
-  color: white;
-  background: #111;
+  /*color: white;
+  background: #111; */
 }
 
 #wrap {
@@ -76,4 +76,10 @@ a:visited {
 
 a:hover {
   color: #383838;
+}
+
+#insert-missing-quests{
+  height: 400px;
+  width: 100%;
+  overflow: auto;
 }

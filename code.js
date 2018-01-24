@@ -15,6 +15,7 @@ function save() {
 
 function run() {
   /* Start the game. */
+  // TODO: Load save file
   displayMessage(save);
 }
 
@@ -40,6 +41,7 @@ function displayMessage(questID) {
   clearInterval(newInterval) // To be sure
   /* Quest ID is the index of the question displayed */
   for (var i = 0; i < quests.length; i++) {
+    // TODO: Implement getQuest instead of this mess.
     if (questID == quests[i].index) {
       area.innerHTML += "<span id='display_" + questsDisplayed + "' class='display-message'></span>"
       window.writtenChars = 0;
@@ -71,6 +73,50 @@ function giveItem(id){
 
 }
 
+function getQuest(index){
+  for(var i = 0; i < quests.length; i++){
+    if(quests[i].index == index){
+      return quests[i]
+    }
+  }
+  return false;
+}
+
+/* Devtools */
+
+function checkQuests(){
+  var missingQuests = new Array();
+  for(var i = 0; i < quests.length; i++){
+    for(var l = 0; l < quests[i].jumpto.length; l++){
+      var checkIndex = quests[i].jumpto[l];
+      if(getQuest(checkIndex) === false){
+        missingQuests.push({
+          index: checkIndex,
+          option: quests[i].options[l]
+        });
+      }
+    }
+  }
+  document.getElementById("insert-missing-quests").innerHTML = "Missing Quests: (" + missingQuests.length + ")";
+  for(var i = 0; i < missingQuests.length; i++){
+    document.getElementById("insert-missing-quests").innerHTML += "<br> Option: " + missingQuests[i].option + " INDEX: " + missingQuests[i].index;
+  }
+}
+
+function checkAvalibleIndex(){
+  document.getElementById("insert-missing-quests").innerHTML = "Loading...";
+  var avalibleIndex = new Array();
+  for(var i = 0; i < 100; i++) avalibleIndex[i] = i;
+  for(var i = 0; i < avalibleIndex.length; i++){
+    if(getQuest(i) !== false) avalibleIndex[i] = null;
+  }
+  document.getElementById("insert-missing-quests").innerHTML = "Avalible index:";
+  for(var i = 0; i < avalibleIndex.length; i++){
+    if(avalibleIndex[i] !== null){
+      document.getElementById("insert-missing-quests").innerHTML += "<br>" + i;
+    }
+  }
+}
 
 function convert() {
   /* For devtools */

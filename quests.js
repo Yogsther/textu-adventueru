@@ -23,7 +23,6 @@ Template:
   special: [null, function(){ giveItem(23) // Any Javascript }]
 }
 
-
 */
 
 var quests = [{
@@ -35,10 +34,24 @@ var quests = [{
   index: 1,
   display: "Why wont you start the game?? It's a lot of fun!",
   options: ["Back to Main Menu", "Exit the website"],
-  jumpto: [2, 0],
+  jumpto: [0, 0],
   special: [null, function(){
     console.log("Closing website");
   }]
+}, {
+  index: 2,
+  display: "*You wake up*",
+  options: ["Look around", "Go back to sleep"],
+  jumpto: [3, 2]
+}, {
+  index: 3,
+  display: "You see a knife and your phone.",
+  options: ["Grab the knife", "Grab your phone", "Leave the bedroom"],
+  jumpto: [4, 5, 6]
+}, {
+  index: 4,
+  display: "*You pick up the knife*",
+  options: ["Stab yourself", "Pocket the knife", "Put back the knife"],
+  jumpto: [7, 8, 3]
 }
-
 ]
