@@ -10,7 +10,7 @@
 
 <body>
   <!--
-      Local Website:  http://172.20.0.229
+      Local Website:  http://172.20.0.229 (Changes daily)
       Github Repo:    https://github.com/Yogsther/textu-adventueru
       Github Website: https://yogsther.github.io/textu-adventueru/
     -->
@@ -23,21 +23,33 @@
     <div class="choices" id="choices_insert">
       Choices:
     </div>
+    <div class="hotbar">
+      <a href="javascript:toggleInventory()" class="extra-link" id="inventory_toggle">[INVENTORY]</a>
+      <a href="javascript:toggleMap()" class="extra-link" id="toggle_map">[MAP]</a>
+      <a href="javascript:toggleOptions()" class="extra-link" id="toggle_options">[OPTIONS]</a>
+    </div>
+
+    <!-- END OF GAME - ONLY DEVTOOLS -->
 
     <div class="devtools">
 
-      <br><br><br>-> Devtools: <a href="javascript:displayMessage(0)">[RESET]</a>
+      <br><br><br><span id="devtools_banner">-> Devtools: <a href="javascript:displayMessage(0)">[RESET]</a> <a href="javascript:disableDev()" id="disable_button">[DISABLE DEVTOOLS]</a></span>
       <input type="text" name="" oninput="convert()" value="" id="input" placeholder="Display text">
-      <input type="text" name="" id="output" value="" placeholder="Output string"><br><br>
-      <button type="button" name="button" onclick="checkQuests()">Check for missing quests</button><br>
-      <button type="button" name="button" onclick="checkAvalibleIndex()">Check for avalible index</button>
+      <input type="text" name="" id="output" value="" placeholder="Output string"><br><br> Check for: <br><br>
+      <button type="button" name="button" onclick="checkQuests()">Missing quests</button>
+      <button type="button" name="button" onclick="checkAvalibleIndex()">Avalible index</button><br>
       <br><span id="insert-missing-quests">
       </span>
 
     </div>
 
+    <!-- Load Quests -->
     <script type="text/javascript" src="quests.js"></script>
+    <!-- Load Items -->
+    <script type="text/javascript" src="items.js"></script>
+    <!-- Load game -->
     <script type="text/javascript" src="code.js"></script>
 
-  </body>
+</body>
+
 </html>

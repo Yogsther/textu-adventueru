@@ -7,6 +7,7 @@ var save = 0;
 var questsDisplayed = 0;
 var questIndex = save;
 var inventory = new Array(); // Start Empty
+var bank = 0;
 
 function save() {
   // Save progress
@@ -69,13 +70,42 @@ function displayMessage(questID) {
   console.warn("Quest ID: " + questID + " was not found!");
 }
 
-function giveItem(id){
-
+function giveItem(id) {
+  var item = loadItem(id);
+  if(item === false) return;
+  inventory.push(item);
 }
 
-function getQuest(index){
-  for(var i = 0; i < quests.length; i++){
-    if(quests[i].index == index){
+function loadItem(id){
+  /* Load item (obj) from ID */
+  for(var i = 0; i < items.length; i++){
+    if(items[i].id == id){
+      return items[i];
+    }
+  }
+  return false;
+}
+
+function hasItem(id) {
+  /* Check if player has a specefic item, boolean */
+  for (var i = 0; i < inventory.length; i++) {
+    if (inventory[i].id == id) return true;
+  }
+  return false;
+}
+
+function bankBalance(){
+  return bank;
+}
+
+function addBank(amount){
+  /* Add money to bank */
+  bank += amount;
+}
+
+function getQuest(index) {
+  for (var i = 0; i < quests.length; i++) {
+    if (quests[i].index == index) {
       return quests[i]
     }
   }
@@ -84,12 +114,12 @@ function getQuest(index){
 
 /* Devtools */
 
-function checkQuests(){
+function checkQuests() {
   var missingQuests = new Array();
-  for(var i = 0; i < quests.length; i++){
-    for(var l = 0; l < quests[i].jumpto.length; l++){
+  for (var i = 0; i < quests.length; i++) {
+    for (var l = 0; l < quests[i].jumpto.length; l++) {
       var checkIndex = quests[i].jumpto[l];
-      if(getQuest(checkIndex) === false){
+      if (getQuest(checkIndex) === false) {
         missingQuests.push({
           index: checkIndex,
           option: quests[i].options[l]
@@ -98,24 +128,28 @@ function checkQuests(){
     }
   }
   document.getElementById("insert-missing-quests").innerHTML = "Missing Quests: (" + missingQuests.length + ")";
-  for(var i = 0; i < missingQuests.length; i++){
+  for (var i = 0; i < missingQuests.length; i++) {
     document.getElementById("insert-missing-quests").innerHTML += "<br> Option: " + missingQuests[i].option + " INDEX: " + missingQuests[i].index;
   }
 }
 
-function checkAvalibleIndex(){
+function checkAvalibleIndex() {
   document.getElementById("insert-missing-quests").innerHTML = "Loading...";
   var avalibleIndex = new Array();
-  for(var i = 0; i < 100; i++) avalibleIndex[i] = i;
-  for(var i = 0; i < avalibleIndex.length; i++){
-    if(getQuest(i) !== false) avalibleIndex[i] = null;
+  for (var i = 0; i < 100; i++) avalibleIndex[i] = i;
+  for (var i = 0; i < avalibleIndex.length; i++) {
+    if (getQuest(i) !== false) avalibleIndex[i] = null;
   }
   document.getElementById("insert-missing-quests").innerHTML = "Avalible index:";
-  for(var i = 0; i < avalibleIndex.length; i++){
-    if(avalibleIndex[i] !== null){
+  for (var i = 0; i < avalibleIndex.length; i++) {
+    if (avalibleIndex[i] !== null) {
       document.getElementById("insert-missing-quests").innerHTML += "<br>" + i;
     }
   }
+}
+
+function disableDev() {
+  // TODO: toggle devmode
 }
 
 function convert() {

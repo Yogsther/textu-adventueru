@@ -34,6 +34,18 @@
   margin-top: 10px;
 }
 
+.hotbar{
+  position: relative;
+  display: block;
+  margin-top: 3px;
+  text-align: left;
+  box-shadow: 0px -2px 0px rgba(0,0,0,0.6);
+  margin-top: 10px;
+  height: 30px;
+  line-height: 30px;
+  background: 
+}
+
 input {
   padding: 5px;
   height: 30px;
@@ -45,6 +57,23 @@ input {
 
 input:focus, select:focus, textarea:focus, button:focus {
   outline: none;
+}
+
+button{
+  height: 30px;
+  border-radius: 4px;
+  background: none;
+  border: none;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: transform 0.1s;
+  margin: 5px;
+}
+button:hover{
+  transform: scale(1.1);
+}
+button:active{
+  transform: scale(0.95);
 }
 
 .title {
@@ -68,18 +97,47 @@ input:focus, select:focus, textarea:focus, button:focus {
 
 a:link {
   color: #4f4f4f;
+  text-decoration: none;
 }
 
 a:visited {
   color: #4f4f4f;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #383838;
+  color: black;
+  text-decoration: none;
+}
+
+.extra-link{
+  display: inline-block;
+}
+
+#inventory_toggle{
+  float: left;
+}
+#toggle_map{
+  margin-left: 5px;
+}
+#toggle_options{
+  float: right;
 }
 
 #insert-missing-quests{
   height: 400px;
   width: 100%;
   overflow: auto;
+}
+
+#devtools_banner{
+  display: block;
+  padding-top: 10px;
+  box-shadow: 0px -4px 0px rgba(0,0,0,0.7);
+  height: 30px;
+}
+
+#disable_button{
+  position: relative;
+  float: right;
 }
