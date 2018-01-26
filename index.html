@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="utf-8">
-  <title> Javascript School </title>
+  <title>Textu Adventuru!</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
   <!--
-      Local Website:  http://172.20.0.229 (Changes daily)
+      Local Website:  http://172.20.0.229/ (Changes daily)
       Github Repo:    https://github.com/Yogsther/textu-adventueru
       Github Website: https://yogsther.github.io/textu-adventueru/
     -->
@@ -20,20 +20,23 @@
     <span class=title>ADVENTURE!</span>
     <div class="main-window" id="area">
     </div>
+    <span id="insert-overlay"></span>
+
     <div class="choices" id="choices_insert">
       Choices:
     </div>
     <div class="hotbar">
-      <a href="javascript:toggleInventory()" class="extra-link" id="inventory_toggle">[INVENTORY]</a>
-      <a href="javascript:toggleMap()" class="extra-link" id="toggle_map">[MAP]</a>
-      <a href="javascript:toggleOptions()" class="extra-link" id="toggle_options">[OPTIONS]</a>
+      <a href="javascript:toggleOverlay()" class="extra-link" id="inventory_toggle">[INVENTORY]</a>
+      <a href="javascript:toggleOverlay()" class="extra-link" id="toggle_map">[MAP]</a>
+      <a href="javascript:toggleOverlay('options')" class="extra-link" id="toggle_options">[OPTIONS]</a>
     </div>
 
     <!-- END OF GAME - ONLY DEVTOOLS -->
 
+
     <div class="devtools">
 
-      <br><br><br><span id="devtools_banner">-> Devtools: <a href="javascript:displayMessage(0)">[RESET]</a> <a href="javascript:disableDev()" id="disable_button">[DISABLE DEVTOOLS]</a></span>
+      <br><br><br><span id="devtools_banner">-> Devtools: <a href="javascript:displayMessage(0)">[RESET]</a></span>
       <input type="text" name="" oninput="convert()" value="" id="input" placeholder="Display text">
       <input type="text" name="" id="output" value="" placeholder="Output string"><br><br> Check for: <br><br>
       <button type="button" name="button" onclick="checkQuests()">Missing quests</button>

@@ -34,6 +34,30 @@
   margin-top: 10px;
 }
 
+#overlay{
+  height: 300px;
+  width: 400px;
+  background: rgba(255,255,255,0.6);
+  position: absolute;
+  top: 52.5px;
+  padding: 5px;
+  border-radius: 2px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.option-item{
+  top: 10px;
+  position: relative;
+  display: block;
+  padding-top: 5px;
+  margin: 0 auto;
+}
+
+#options_overlay{
+  text-align: center;
+}
+
 .hotbar{
   position: relative;
   display: block;
@@ -43,7 +67,7 @@
   margin-top: 10px;
   height: 30px;
   line-height: 30px;
-  background: 
+  background:
 }
 
 input {
